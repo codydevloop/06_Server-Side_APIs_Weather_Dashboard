@@ -21,9 +21,142 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Work Day Scheduler</title>
+    <title>Weather Dashboard</title>
   </head>
   <body>
+
+    <!-- ***Header -->
+    <header>
+      <div class="jumbotron container">
+        <h1 class="display-4">Weather Dashboard</h1>
+        <!-- <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p> -->
+        <hr class="my-4">
+        <!-- <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> -->
+        <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
+      </div>
+    </header>
+
+
+    <section class="container">
+
+      <!-- ***Search area -->
+
+      <div class="row">
+        <div class="col-3" style="background-color: blueviolet;">
+
+          <div class="row">
+            <div class="col-12">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="City Name" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search Icon</button>
+                </div>
+              </div>        
+            </div>
+          </div>
+
+          <!-- **Search History -->
+          <div class="row">
+            <div class="card" style="width: 18rem;">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+
+
+        <!-- ***5 day and current -->
+
+        <div class="col-9">
+          <div class="row">
+            <!-- <div style="background-color: blue;">Hellow</div> -->
+            <div class="jumbotron container">
+              <p id="cityDateCurrent" aria-placeholder="City and Date Information">City & Date Information</p>
+              <p id="tempFCurrent">Temperature:</p>   
+              <P id="humidityCurrent">Humidity:</P>
+              <p id="windSpeedCurrent">Wind Speed:</p>
+              <p id="uvIndexCurrent">UV Index:</p>
+              <!-- <h1 class="display-4">Weather Dashboard</h1> -->
+              <!-- <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p> -->
+              <!-- <hr class="my-4"> -->
+              <!-- <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> -->
+              <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
+            </div>
+          </div>  
+
+          <!-- **5 day display using 'Bootstrap Cards' -->
+          <div class="row">
+            <div class="col">
+              <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Date</div>
+                <div class="card-body">
+                  <!-- <h5 class="card-title">Primary card title</h5> -->
+                  <p class="card-text" id="futureDayOneIcon">Weather Icon</p>
+                  <p class="card-text" id="futureDayOneTemp">Temp:</p>
+                  <p class="card-text" id="futureDayOneHumidity">Humidity:</p>
+                </div>
+              </div>
+            </div>
+            <div class="col"> 
+              <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">Date</div>
+                <div class="card-body">
+                  <!-- <h5 class="card-title">Success card title</h5> -->
+                  <p class="card-text" id="futureDayTwoIcon">Weather Icon</p>
+                  <p class="card-text" id="futureDayTwoTemp">Temp:</p>
+                  <p class="card-text" id="futureDayTwoHumidity">Humidity:</p>
+                </div>
+              </div>            
+            </div>
+            <!-- Added just for look ***need to update ids -->
+            <div class="col"> 
+              <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">Date</div>
+                <div class="card-body">
+                  <!-- <h5 class="card-title">Success card title</h5> -->
+                  <p class="card-text" id="futureDayThreeIcon">Weather Icon</p>
+                  <p class="card-text" id="futureDayThreeTemp">Temp:</p>
+                  <p class="card-text" id="futureDayThreeHumidity">Humidity:</p>
+                </div>
+              </div>            
+            </div>
+
+            <div class="col"> 
+              <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">Date</div>
+                <div class="card-body">
+                  <!-- <h5 class="card-title">Success card title</h5> -->
+                  <p class="card-text" id="futureDayFourIcon">Weather Icon</p>
+                  <p class="card-text" id="futureDayFourTemp">Temp:</p>
+                  <p class="card-text" id="futureDayFourHumidity">Humidity:</p>
+                </div>
+              </div>            
+            </div>
+
+            <div class="col"> 
+              <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">Date</div>
+                <div class="card-body">
+                  <!-- <h5 class="card-title">Success card title</h5> -->
+                  <p class="card-text" id="futureDayFiveIcon">Weather Icon</p>
+                  <p class="card-text" id="futureDayFiveTemp">Temp:</p>
+                  <p class="card-text" id="futureDayFiveHumidity">Humidity:</p>
+                </div>
+              </div>            
+            </div>
+
+          </div>
+          
+        </div>
+
+
+      </div>
+    </section>
 
     
 
