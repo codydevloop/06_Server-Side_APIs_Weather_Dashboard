@@ -5,7 +5,7 @@ let apiKey = "b52ce1773e76080cb950272fcf749391"
 
 $(document).ready(function () {
 
-    // let movieNameC = $(this).attr("data-name");
+
     let queryURL = "http://api.openweathermap.org/data/2.5/weather?q=phoenix&units=imperial&APPID="+apiKey;
 
 
@@ -16,19 +16,12 @@ $(document).ready(function () {
 
         .then(function (response){
 
-            // console.log(response);
-
-            // Get the lat and long
-            // console.log(response.coord.lon);
             let longitude = response.coord.lon;
             let latitiude = response.coord.lat;
-            console.log(response);
 
             let cityName = response.name;
-            // console.log("this is city name :"+cityName);
 
-            //make call to One Call API
-            // https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&appid={YOUR API KEY}
+            //****make call to One Call API
 
             $.ajax({
                 url:"http://api.openweathermap.org/data/2.5/onecall?lat="+latitiude+"&lon="+longitude+"&units=imperial&appid="+apiKey,
@@ -36,20 +29,21 @@ $(document).ready(function () {
             })
 
             .then(function(oneCall){
-                
-                console.log(oneCall);
-                // let searchedData = JSON.stringify(oneCall);
-                // console.log("this is One CAll: " + searchedData);
 
                 let timeFromOneCall = oneCall.current.dt;
-                console.log("This is city timie : "+timeFromOneCall);
 
+
+                //**set page to display current city and Date
                 let newFormatTime = moment.unix(timeFromOneCall).format('dddd, MMMM Do, YYYY');
-
-                // let timeUTCconversion = moment.utc(timeFromOneCall);
-                console.log(newFormatTime);
-                // let regularTime = moment(timeUTCconversion, 'MM/DD/YYYY');
+                $("#cityDateCurrent")[0].innerHTML = cityName +" ("+newFormatTime+") ";
+                // let currentTempEl =  $("#tempFCurrent");
+                // let currentTemp = oneCall.current.temp;
+                // currentTempEl[0].innerHTML = currentTemp+" &#176;F";
+                $("#tempFCurrent")[0].innerHTML = "Temperature:  "+oneCall.current.temp+" &#176;F";
+                $("#humidityCurrent")[0].innerHTML = "Humidity:  "+oneCall.current.humidity+"%";
+                $("#windSpeedCurrent")[0].innerHTML = "Wind Speed:  "+oneCall.current.wind_speed+"MPH";
                 
+                console.log(oneCall);  
 
 
             });
