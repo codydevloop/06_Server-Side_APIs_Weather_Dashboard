@@ -42,9 +42,6 @@ $(document).ready(function () {
                 //**set page to display current city and Date
                 let newFormatTime = moment.unix(timeFromOneCall).format('dddd, MMMM Do, YYYY');
                 $("#cityDateCurrent")[0].innerHTML = cityName +" ("+newFormatTime+") ";
-                // let currentTempEl =  $("#tempFCurrent");
-                // let currentTemp = oneCall.current.temp;
-                // currentTempEl[0].innerHTML = currentTemp+" &#176;F";
                 $("#tempFCurrent")[0].innerHTML = "Temperature:  "+oneCall.current.temp+" &#176;F";
                 $("#humidityCurrent")[0].innerHTML = "Humidity:  "+oneCall.current.humidity+"%";
                 $("#windSpeedCurrent")[0].innerHTML = "Wind Speed:  "+oneCall.current.wind_speed+"MPH";
@@ -56,44 +53,32 @@ $(document).ready(function () {
                     let icon = oneCall.daily[img].weather[0].icon
                     
                     let iconUrl = "http://openweathermap.org/img/wn/"+icon+"@2x.png";
-                    return iconUrl
+                    return iconUrl;
 
                 }
 
                 $("#futureDay0Icon").attr("src", genereateImg(0));
                 $("#futureDay0Temp").text(`${oneCall.daily[0].temp.day}`);
-                $("#futureDay0Humidity").text(`${oneCall.daily[0].temp.day}`);
+                $("#futureDay0Humidity").text(`${oneCall.daily[0].humidity}`+"%");
 
 
                 $("#futureDay1Icon").attr("src", genereateImg(1));
-                $("#futureDay0Temp").text(`${oneCall.daily[0].temp.day}`);
-                $("#futureDay0Humidity").text(`${oneCall.daily[0].temp.day}`);
+                $("#futureDay1Temp").text(`${oneCall.daily[1].temp.day}`);
+                $("#futureDay1Humidity").text(`${oneCall.daily[1].humidity}`+"%");
 
 
-                $("#futureDay0Icon").text(`${oneCall.daily[0].temp.day}`);
-                $("#futureDay0Temp").text(`${oneCall.daily[0].temp.day}`);
-                $("#futureDay0Humidity").text(`${oneCall.daily[0].temp.day}`);
+                $("#futureDay2Icon").attr("src", genereateImg(2));
+                $("#futureDay2Temp").text(`${oneCall.daily[2].temp.day}`);
+                $("#futureDay2Humidity").text(`${oneCall.daily[2].humidity}`+"%");
 
-                $("#futureDay0Icon").text(`${oneCall.daily[0].temp.day}`);
-                $("#futureDay0Temp").text(`${oneCall.daily[0].temp.day}`);
-                $("#futureDay0Humidity").text(`${oneCall.daily[0].temp.day}`);
+                $("#futureDay3Icon").attr("src", genereateImg(3));
+                $("#futureDay3Temp").text(`${oneCall.daily[3].temp.day}`);
+                $("#futureDay3Humidity").text(`${oneCall.daily[3].humidity}`+"%");
+
+                $("#futureDay4Icon").attr("src", genereateImg(4));
+                $("#futureDay4Temp").text(`${oneCall.daily[4].temp.day}`);
+                $("#futureDay4Humidity").text(`${oneCall.daily[4].humidity}`+"%");
                 
-               
-                //**Display future forcast  - loop
-                // for (let i = 0; i < 5; i++){
-                //     let date =oneCall.daily[i].dt;
-                //     let newDate = moment.unix(date).format('dddd', "MMMM");
-                //     $("#futureDay"+[i]+"Temp").outerText = oneCall.daily[i].temp.day;
-                //     console.log(oneCall.daily[i].temp.day);
-                //     var theTheEl = $("#futureDay").innerHTML = oneCall.daily[i].temp.day;
-                  
-
-
-
-                    
-
-                // };
-
 
 
                 //**add current and future info to a collection - store to session storage
@@ -106,22 +91,6 @@ $(document).ready(function () {
                 console.log(oneCall); 
 
             });
-            //***I don't need this fo UVI ****/
-            //***make call to  need to make these updates*/
-            // http://api.openweathermap.org/data/2.5/uvi?appid={appid}&lat={lat}&lon={lon}
-
-            // $.ajax({
-            //     url:"http://api.openweathermap.org/data/2.5/uvi?appid="+apiKey+"&lat="+latitiude+"&lon="+longitude,
-            //     method: "GET"
-            // })
-
-            // .then(function(uviResponse){
-
-          
-                
-            //     console.log(JSON.stringify(uviResponse)); 
-
-            // });
 
         });
 
